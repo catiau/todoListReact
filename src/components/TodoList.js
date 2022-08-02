@@ -21,7 +21,7 @@ function TodoList() {
       return
     }
 
-    setTodos(prev => prev.map(item.id === todoId ? newValue : item))
+    setTodos(prev => prev.map(item => item.id === todoId ? newValue : item))
   }
 
   const removeTodo = id => {
@@ -41,7 +41,7 @@ function TodoList() {
   }
 
   return (
-    <>
+    <div className='todo-app'>
       <h1>What's the Plan for Today?</h1>
       <TodoForm onSubmit={addTodo} />
       <Todo
@@ -50,7 +50,7 @@ function TodoList() {
         removeTodo={removeTodo}
         updateTodo={updateTodo}
       />
-    </>
+    </div>
   )
 }
 
